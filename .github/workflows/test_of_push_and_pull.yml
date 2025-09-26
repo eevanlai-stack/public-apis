@@ -2,9 +2,11 @@ name: "Tests of push & pull"
 
 on:
   push:
-    branches: [ master ]
+    branches: "master"
+    - main
+    -
   pull_request:
-    branches: [ master ]
+    branches:["master"
 
 env:
   FILENAME: README.md
@@ -12,7 +14,7 @@ env:
 jobs:
   tests:
     name: 'Validate README.md changes'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lat
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
